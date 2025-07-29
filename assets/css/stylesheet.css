@@ -464,3 +464,37 @@ footer {
     -webkit-text-stroke: 1px rgb(255, 255, 255);
     font-size: larger;
 }
+
+
+.card-footer {
+    background-color: #fdfdfd;
+    border-top: 1px solid #ddd;
+}
+
+.precio {
+    font-size: 2rem;
+    color: #d10c0c;
+}
+
+.cantidad-input {
+    width: 70px;
+    text-align: center;
+}
+
+.cantidad-box label {
+    font-weight: 500;
+}
+
+@media (max-width: 576px) {
+    .producto-controles {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .cantidad-box {
+        justify-content: center;
+    }
+}

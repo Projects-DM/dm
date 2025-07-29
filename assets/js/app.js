@@ -1,115 +1,98 @@
+// 🔁 Objeto de productos
 const productos = {
     1: {
         nombre: "Filete de Pechuga",
-        descripcion: "Jugoso filete artesanal, sin aditivos, ideal para preparaciones saludables. Corte natural y tierno, listo para asar, freír o empanar.",
+        descripcion: "Jugoso filete artesanal, sin aditivos, ideal para preparaciones saludables.",
         precio: 28000,
         imagen: "../assets/img/meat1.jpg"
     },
     2: {
         nombre: "Chuzos de Pollo",
-        descripcion: "Deliciosos chuzos de pollo adobados, perfectos para la parrilla. Prácticos, sabrosos y listos para cocinar en minutos.",
+        descripcion: "Deliciosos chuzos de pollo adobados, perfectos para la parrilla.",
         precio: 29500,
         imagen: "../assets/img/meat2.jpg"
     },
     3: {
         nombre: "Pollo a Granel",
-        descripcion: "Pollo fresco por piezas: muslo, contramuslo, pechuga, pernil y rabadilla jugosa. Ideal para restaurantes, negocios, hogares y preparaciones al gusto.",
+        descripcion: "Pollo fresco por piezas, ideal para restaurantes y hogares.",
         precio: 12000,
         imagen: "../assets/img/meat3.jpg"
     }
 };
 
+// 🧠 Variables de estado
+let total = 0;
+let clicks = 0;
+let carrito = [];
 
-var carneUnoprecio = 200;
+// 🖨️ Mostrar valores iniciales
+document.getElementById("totalNum").innerHTML = "$ 0";
+document.getElementById("clicks").innerHTML = "0";
 
-function mostrarProductos() {
-    console.log(productos[2].precio.precioNormal);
-}
-
+// 🔓 Abrir carrito
 function openNav() {
     document.getElementById("mySidenav").style.width = "350px";
 }
 
+// 🔒 Cerrar carrito
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
-function meatUno() {
-    var x = document.getElementById("mySelect");
-    var option = document.createElement("option");
+// ➕ Agregar al carrito
+function agregarAlCarrito(idProducto) {
+    const producto = productos[idProducto];
+    if (!producto) return;
 
+    const inputCantidad = document.getElementById(`cantidad-${idProducto}`);
+    let cantidad = parseInt(inputCantidad.value);
 
-    option.text = "Filete de Pechuga";
-    var btn = document.createElement("button");
-    btn.innerHTML = "";
-    option.appendChild(btn);
-
-    x.add(option);
-
-
-
-
-    var precio1 = 28.000;
-    document.getElementById("totalNum").innerHTML = "$ " + precio1;
-
-    clicks += 1;
-    document.getElementById("clicks").innerHTML = clicks;
-
-}
-
-
-function meatDos() {
-    var x = document.getElementById("mySelect");
-    var option = document.createElement("option");
-
-    option.text = "Chuzos de Pollo";
-
-    x.add(option);
-
-
-    var precio2 = 29.500;
-    document.getElementById("totalNum").innerHTML = "$ " + precio2;
-
-    clicks += 1;
-    document.getElementById("clicks").innerHTML = clicks;
-}
-
-function meatTres() {
-    var x = document.getElementById("mySelect");
-    var option = document.createElement("option");
-    option.text = "Pollo a Granel";
-    x.add(option);
-
-    var precio3 = 12.000;
-    document.getElementById("totalNum").innerHTML = "$ " + precio3;
-
-    clicks += 1;
-    document.getElementById("clicks").innerHTML = clicks;
-
-    return precio3
-}
-
-
-
-function vaciar() {
-    var select = document.getElementById("mySelect");
-    var length = select.options.length;
-    for (i = length - 1; i >= 0; i--) {
-        select.options[i] = null;
+    if (isNaN(cantidad) || cantidad < 1) {
+        cantidad = 1;
     }
-    var precio = 0;
-    document.getElementById("totalNum").innerHTML = "$ " + precio;
 
-    clicks = 0;
+    const productoExistente = carrito.find(p => p.id === idProducto);
+    if (productoExistente) {
+        productoExistente.cantidad += cantidad;
+    } else {
+        carrito.push({
+            id: idProducto,
+            nombre: producto.nombre,
+            precio: producto.precio,
+            cantidad: cantidad
+        });
+    }
+
+    // Limpiar input
+    inputCantidad.value = "";
+
+    // Agregar al <select>
+    const select = document.getElementById("mySelect");
+    const option = document.createElement("option");
+    option.text = `${cantidad} x ${producto.nombre}`;
+    select.add(option);
+
+    // Actualizar total
+    total += producto.precio * cantidad;
+    document.getElementById("totalNum").innerHTML = "$ " + total.toLocaleString("es-CO");
+
+    // Actualizar contador
+    clicks += cantidad;
     document.getElementById("clicks").innerHTML = clicks;
+
+    // Abrir el carrito automáticamente
+    openNav();
 }
 
-var clicks = 0;
+// 🧹 Vaciar carrito
+function vaciar() {
+    const select = document.getElementById("mySelect");
+    select.innerHTML = "";
 
+    total = 0;
+    clicks = 0;
+    carrito = [];
 
-
-
-
-
-var precio = 0;
-document.getElementById("totalNum").innerHTML = "$ " + precio;
+    document.getElementById("totalNum").innerHTML = "$ 0";
+    document.getElementById("clicks").innerHTML = "0";
+}

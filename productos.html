@@ -32,7 +32,7 @@
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand">
             <img id="logoEmpresa" src="../assets/img/logo_dm.png" width="150" height="35" alt="">
         </a>
 
@@ -99,13 +99,8 @@
         <button onclick="openNav()" id="cartBoton" class="btn btn-outline-dark my-2 my-sm-0" type="submit"><i id="cart"
                 class="fas fa-shopping-cart"></i><a id="clicks">0</a></button>
 
-
-
-
-
         </div>
     </nav>
-
 
     <section id="banner2">
         <h1 id="carne">
@@ -115,54 +110,107 @@
     </section>
 
     <section id="cardsShop">
+        <div class="container-fluid mt-4">
+            <div class="row justify-content-center">
+                <!-- Producto 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="../assets/img/meat1.jpg" alt="Filete de Pechuga">
+                        <div class="card-body">
+                            <h5 class="card-title">Filete de Pechuga</h5>
+                            <hr>
+                            <p class="card-text">Jugoso filete artesanal, sin aditivos, ideal para preparaciones
+                                saludables. Corte natural y tierno, listo para asar, freír o empanar.</p>
+                        </div>
+                        <div class="card-footer p-3">
+                            <div class="producto-info text-center mb-2">
+                                <span class="precio fs-5 fw-bold text-success">$28.000</span>
+                            </div>
 
+                            <div
+                                class="producto-controles d-flex flex-column flex-sm-row justify-content-center align-items-center gap-2">
+                                <div class="cantidad-box d-flex align-items-center gap-2">
+                                    <label for="cantidad-1" class="mb-0">Cantidad:</label>
+                                    <input type="number" id="cantidad-1" min="1" value="1"
+                                        class="form-control form-control-sm cantidad-input">
+                                </div>
 
-        <div class="card-deck">
-            <div class="card">
-                <img class="card-img-top" src="../assets/img/meat1.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Filete de Pechuga</h5>
-                    <hr>
-                    <p class="card-text">Jugoso filete artesanal, sin aditivos, ideal para preparaciones saludables.
-                        Corte natural y tierno, listo para asar, freír o empanar..</p>
+                                <button onclick="agregarAlCarrito(1)" class="btn btn-dark btn-sm">
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <small id="precio" class="text-muted">$ 28.000</small>
-                    <button id="botonCarrito" onclick="meatUno()" type="button" class="btn btn-dark">Agregar a
-                        Carrito</button>
+
+                <!-- Producto 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="../assets/img/meat2.jpg" alt="Chuzos de Pollo">
+                        <div class="card-body">
+                            <h5 class="card-title">Chuzos de Pollo</h5>
+                            <hr>
+                            <p class="card-text">Deliciosos chuzos de pollo adobados, perfectos para la parrilla.
+                                Prácticos, sabrosos y listos para cocinar en minutos.</p>
+                        </div>
+                        <div class="card-footer p-3">
+                            <div class="producto-info text-center mb-2">
+                                <span class="precio fs-5 fw-bold text-success">$15.000</span>
+                            </div>
+
+                            <div
+                                class="producto-controles d-flex flex-column flex-sm-row justify-content-center align-items-center gap-2">
+                                <div class="cantidad-box d-flex align-items-center gap-2">
+                                    <label for="cantidad-2" class="mb-0">Cantidad:</label>
+                                    <input type="number" id="cantidad-2" min="1" value="1"
+                                        class="form-control form-control-sm cantidad-input">
+                                </div>
+
+                                <button onclick="agregarAlCarrito(2)" class="btn btn-dark btn-sm">
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="../assets/img/meat3.jpg" alt="Pollo a Granel">
+                        <div class="card-body">
+                            <h5 class="card-title">Pollo a Granel</h5>
+                            <hr>
+                            <p class="card-text">Pollo fresco por piezas: muslo, contramuslo, pechuga, pernil y
+                                rabadilla jugosa. Ideal para restaurantes, negocios, hogares y preparaciones al gusto.
+                            </p>
+                        </div>
+                        <div class="card-footer p-3">
+                            <div class="producto-info text-center mb-2">
+                                <span class="precio fs-5 fw-bold text-success">$22.000</span>
+                            </div>
+
+                            <div
+                                class="producto-controles d-flex flex-column flex-sm-row justify-content-center align-items-center gap-2">
+                                <div class="cantidad-box d-flex align-items-center gap-2">
+                                    <label for="cantidad-3" class="mb-0">Cantidad:</label>
+                                    <input type="number" id="cantidad-3" min="1" value="1"
+                                        class="form-control form-control-sm cantidad-input">
+                                </div>
+
+                                <button onclick="agregarAlCarrito(3)" class="btn btn-dark btn-sm">
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <img class="card-img-top" src="../assets/img/meat2.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Chuzos de Pollo</h5>
-                    <hr>
-                    <p class="card-text">Deliciosos chuzos de pollo adobados, perfectos para la parrilla.
-                        Prácticos, sabrosos y listos para cocinar en minutos.
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <small id="precio" class="text-muted">$ 29.500
-                    </small>
-                    <button id="botonCarrito" onclick="meatDos()" type="button" class="btn btn-dark">Agregar a
-                        Carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="../assets/img/meat3.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Pollo a Granel</h5>
-                    <hr>
-                    <p class="card-text">Pollo fresco por piezas: muslo, contramuslo, pechuga, pernil y rabadilla
-                        jugosa.
-                        Ideal para restaurantes, negocios, hogares y preparaciones al gusto </p>
-                </div>
-                <div class="card-footer">
-                    <small id="precio" class="text-muted">$ 12.000</small>
-                    <button id="botonCarrito" onclick="meatTres()" type="button" class="btn btn-dark">Agregar a
-                        Carrito</button>
-                </div>
-            </div>
+        </div>
+
 
         </div>
     </section>
@@ -170,7 +218,7 @@
 
     <footer>
         <div class="text-right p-3" style=" color: white; background-color: rgba(0, 0, 0, 0.863);">
-            © 2021 Kevin Cortes Muñoz
+            © 2025 DM Distribuciones - Esteban Jiménez Moreno
         </div>
     </footer>
     <script src="../assets/js/app.js"></script>
