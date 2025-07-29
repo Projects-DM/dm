@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/stylesheet.css">
+    <title>Ecommerce</title>
+</head>
+
+<body onload="mostrarProductos()">
+
+    <!-- Barra superior animada -->
+    <div class="top-banner">
+        <div class="scroll-text-wrapper">
+            <div class="scroll-content">
+                <img src="assets/img/kids-chicken.gif" alt="Pollito" class="pollito">
+                <span class="texto-scroll">
+                    Pedidos al WhatsApp <i class="fa-brands fa-whatsapp fa-lg"></i>
+                    </i> +57 300 000 0000
+                    <i class="fa-solid fa-envelope"></i></i> pedidos@dmdistribuciones.com <i
+                        class="fa-solid fa-cart-shopping"></i> Mínimo de compra:
+                    $200.000
+                </span>
+                <img src="assets/img/kids-chicken.gif" alt="Pollito" class="pollito">
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img id="logoEmpresa" src="../assets/img/logo_dm.png" width="150" height="35" alt="">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link linkMenu" href="index.html">Principal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link linkMenu" href="#SobreNosotros">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link linkMenu" href="productos.html">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link linkMenu" href="#">Ubicación</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle linkMenu" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Contacto
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item linkMenu" href="#">Teléfono</a>
+                        <a class="dropdown-item linkMenu" href="#">Facebook</a>
+                        <a class="dropdown-item linkMenu" href="#">WhatsApp</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item linkMenu" href="#">Envíos a Domicilio</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <h5 id="carritoTitulo">Productos Agregados</h5>
+
+            <label for="mySelect">Productos en el carrito:</label>
+            <select id="mySelect" size="8">
+            </select>
+
+
+
+            <hr id="lineaCarrito">
+            <h4 id="total">Total:</h4>
+            <h4 id="totalNum"></h4>
+
+            <div id="pagar">
+                <button id="pagarBoton" type="button" class="btn btn-danger">Pagar</button>
+
+                <button id="vaciarBoton" onclick="vaciar()" type="button" class="btn btn-dark">Vaciar</button>
+
+            </div>
+        </div>
+        <button onclick="openNav()" id="cartBoton" class="btn btn-outline-dark my-2 my-sm-0" type="submit"><i id="cart"
+                class="fas fa-shopping-cart"></i><a id="clicks">0</a></button>
+
+
+
+
+
+        </div>
+    </nav>
+
+
+    <section id="banner2">
+        <h1 id="carne">
+            Carne de Pollo
+        </h1>
+
+    </section>
+
+    <section id="cardsShop">
+
+
+        <div class="card-deck">
+            <div class="card">
+                <img class="card-img-top" src="../assets/img/meat1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Filete de Pechuga</h5>
+                    <hr>
+                    <p class="card-text">Jugoso filete artesanal, sin aditivos, ideal para preparaciones saludables.
+                        Corte natural y tierno, listo para asar, freír o empanar..</p>
+                </div>
+                <div class="card-footer">
+                    <small id="precio" class="text-muted">$ 28.000</small>
+                    <button id="botonCarrito" onclick="meatUno()" type="button" class="btn btn-dark">Agregar a
+                        Carrito</button>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="../assets/img/meat2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Chuzos de Pollo</h5>
+                    <hr>
+                    <p class="card-text">Deliciosos chuzos de pollo adobados, perfectos para la parrilla.
+                        Prácticos, sabrosos y listos para cocinar en minutos.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <small id="precio" class="text-muted">$ 29.500
+                    </small>
+                    <button id="botonCarrito" onclick="meatDos()" type="button" class="btn btn-dark">Agregar a
+                        Carrito</button>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="../assets/img/meat3.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Pollo a Granel</h5>
+                    <hr>
+                    <p class="card-text">Pollo fresco por piezas: muslo, contramuslo, pechuga, pernil y rabadilla
+                        jugosa.
+                        Ideal para restaurantes, negocios, hogares y preparaciones al gusto </p>
+                </div>
+                <div class="card-footer">
+                    <small id="precio" class="text-muted">$ 12.000</small>
+                    <button id="botonCarrito" onclick="meatTres()" type="button" class="btn btn-dark">Agregar a
+                        Carrito</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="text-right p-3" style=" color: white; background-color: rgba(0, 0, 0, 0.863);">
+            © 2021 Kevin Cortes Muñoz
+        </div>
+    </footer>
+    <script src="../assets/js/app.js"></script>
+    <script src="https://kit.fontawesome.com/70d25248c9.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+</body>
+
+
+</html>
