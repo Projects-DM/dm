@@ -21,16 +21,19 @@ nav.navbar {
 
 .linkMenu {
     color: #df1919 !important;
-    padding: 20px 40px;
+    padding: 10px 40px;
     border: 6px solid transparent;
     transition: all 0.3s ease;
     font-weight: 500;
+    font-size: 22px;
+
 }
 
 
 .linkMenu:hover {
     color: #0a0404 !important;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+
 }
 
 
@@ -220,6 +223,8 @@ h3:hover {
 
 p {
     font-style: italic;
+    font-size: 18px;
+
 }
 
 #uten {
@@ -236,6 +241,7 @@ hr {
     font-size: x-large;
     -webkit-text-stroke: 1px rgb(250, 250, 250);
     margin: 5px;
+
 }
 
 #cart:hover {
@@ -394,13 +400,23 @@ footer {
     background-color: rgba(17, 17, 17, 0.63);
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    top: 40px;
 }
 
 #carritoTitulo {
     text-align: center;
     color: #ffffff;
 }
+
+#mySidenav label {
+    font-size: 22px;
+    color: #ece5e5;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+}
+
+
 
 #pagar {
     margin-top: 20px;
