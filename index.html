@@ -57,7 +57,7 @@
                     <a class="nav-link linkMenu" href="productos.html">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link linkMenu" href="#">Ubicación</a>
+                    <a class="nav-link linkMenu" href="ubicacion.html">Ubicación</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle linkMenu" href="#" id="navbarDropdown" role="button"
@@ -76,10 +76,7 @@
         </div>
 
 
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-            <button class="btnBuscar btn-outline-danger my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
+
         </div>
     </nav>
 
@@ -93,7 +90,11 @@
                 <div id="brands" class="col">
                     <div id="botonIndex">
                         <button id="btnEnviar" type="button" class="btn btn-danger">Envio a Domicilio</button>
-                        <button id="btnRecoger" type="button" class="btn btn-danger">Recoger en Sucursal</button>
+                        <button id="btnRecoger" type="button" class="btn btn-danger"
+                            onclick="location.href='ubicacion.html#ubicacionMapa'">
+                            Recoger en Sucursal
+                        </button>
+
                     </div>
                 </div>
             </div>

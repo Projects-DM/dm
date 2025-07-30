@@ -267,12 +267,6 @@ hr {
 }
 
 
-.btnBuscar {
-    border: 1px solid #02020298;
-    position: relative;
-
-}
-
 #btnRecoger {
     margin-left: 15px;
     border: 5px solid rgb(236, 236, 236);
@@ -314,6 +308,7 @@ hr {
 }
 
 h3 {
+    color: #cc0000;
     text-align: center;
     margin-top: 50px;
     font-family: 'Alfa Slab One', cursive;
@@ -513,4 +508,63 @@ footer {
     .cantidad-box {
         justify-content: center;
     }
+}
+
+#ubicacionMapa {
+    scroll-margin-top: 100px;
+    /* ajusta este valor según la altura de tu navbar */
+}
+
+@keyframes resplandor {
+    0% {
+        box-shadow: 0 0 0px rgba(255, 0, 0, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    }
+
+    100% {
+        box-shadow: 0 0 0px rgba(255, 0, 0, 0);
+    }
+}
+
+.destacar-mapa {
+    animation: resplandor 1.5s ease-in-out 1;
+}
+
+.info-ubicacion {
+    margin-top: -220px;
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+}
+
+.info-ubicacion h3 {
+    font-size: 20px;
+    margin-bottom: -10px;
+    color: #cc0000;
+    text-align: center;
+    margin-top: 0px;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 50px;
+
+
+}
+
+.info-ubicacion p {
+    font-size: 16px;
+    line-height: 1.6;
+
+}
+
+.descripcion {
+    text-align: center;
+    color: #000000;
+    font-size: 30px;
+
 }
