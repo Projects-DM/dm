@@ -26,8 +26,7 @@ let clicks = 0;
 let carrito = [];
 
 // 🖨️ Mostrar valores iniciales
-document.getElementById("totalNum").innerHTML = "$ 0";
-document.getElementById("clicks").innerHTML = "0";
+
 
 // 🔓 Abrir carrito
 function openNav() {
@@ -93,6 +92,31 @@ function vaciar() {
     clicks = 0;
     carrito = [];
 
-    document.getElementById("totalNum").innerHTML = "$ 0";
-    document.getElementById("clicks").innerHTML = "0";
+
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navItem = document.getElementById("navContacto");
+    const submenu = document.getElementById("submenuContacto");
+
+    if (navItem && submenu) {
+        navItem.addEventListener("mouseenter", () => {
+            navItem.classList.add("show");
+            submenu.classList.add("show");
+        });
+
+        navItem.addEventListener("mouseleave", () => {
+            navItem.classList.remove("show");
+            submenu.classList.remove("show");
+        });
+
+        // Previene que el clic en el enlace principal recargue
+        const isContacto = window.location.pathname.includes("contacto.html");
+        if (isContacto) {
+            const linkContacto = document.getElementById("menuContacto");
+            if (linkContacto) {
+                linkContacto.addEventListener("click", (e) => e.preventDefault());
+            }
+        }
+    }
+});
