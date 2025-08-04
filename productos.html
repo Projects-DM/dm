@@ -102,7 +102,7 @@
         </div>
     </nav>
 
-    <section id="banner2">
+    <section id="banner2" class="parallax-section">
         <h1 id="carne">
             Carne de Pollo
         </h1>
@@ -111,9 +111,9 @@
 
     <section id="cardsShop">
         <div class="container-fluid mt-4">
-            <div class="row justify-content-center">
+            <div class="row g-4"> <!-- Quitado justify-content-center y agregado g-4 -->
                 <!-- Producto 1 -->
-                <div class="col-md-4">
+                <div class="col-sm-6 col-md-4 col-lg-3"> <!-- Ahora 4 tarjetas por fila en pantallas grandes -->
                     <div class="card h-100">
                         <img class="card-img-top" src="assets/img/meat1.jpg" alt="Filete de Pechuga">
                         <div class="card-body">
@@ -126,7 +126,6 @@
                             <div class="producto-info text-center mb-2">
                                 <span class="precio fs-5 fw-bold text-success">$28.000</span>
                             </div>
-
                             <div
                                 class="producto-controles d-flex flex-column flex-sm-row justify-content-center align-items-center gap-2">
                                 <div class="cantidad-box d-flex align-items-center gap-2">
@@ -134,18 +133,16 @@
                                     <input type="number" id="cantidad-1" min="1" value="1"
                                         class="form-control form-control-sm cantidad-input">
                                 </div>
-
                                 <button onclick="agregarAlCarrito(1)" class="btn btn-dark btn-sm">
                                     Agregar
                                 </button>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
-                <!-- Producto 2 -->
-                <div class="col-md-4">
+                <!-- Repite el mismo cambio para Producto 2 y 3 -->
+                <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="card h-100">
                         <img class="card-img-top" src="assets/img/meat2.jpg" alt="Chuzos de Pollo">
                         <div class="card-body">
@@ -158,7 +155,6 @@
                             <div class="producto-info text-center mb-2">
                                 <span class="precio fs-5 fw-bold text-success">$15.000</span>
                             </div>
-
                             <div
                                 class="producto-controles d-flex flex-column flex-sm-row justify-content-center align-items-center gap-2">
                                 <div class="cantidad-box d-flex align-items-center gap-2">
@@ -166,18 +162,15 @@
                                     <input type="number" id="cantidad-2" min="1" value="1"
                                         class="form-control form-control-sm cantidad-input">
                                 </div>
-
                                 <button onclick="agregarAlCarrito(2)" class="btn btn-dark btn-sm">
                                     Agregar
                                 </button>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
-                <!-- Producto 3 -->
-                <div class="col-md-4">
+                <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="card h-100">
                         <img class="card-img-top" src="assets/img/meat3.jpg" alt="Pollo a Granel">
                         <div class="card-body">
@@ -191,7 +184,6 @@
                             <div class="producto-info text-center mb-2">
                                 <span class="precio fs-5 fw-bold text-success">$22.000</span>
                             </div>
-
                             <div
                                 class="producto-controles d-flex flex-column flex-sm-row justify-content-center align-items-center gap-2">
                                 <div class="cantidad-box d-flex align-items-center gap-2">
@@ -199,45 +191,45 @@
                                     <input type="number" id="cantidad-3" min="1" value="1"
                                         class="form-control form-control-sm cantidad-input">
                                 </div>
-
                                 <button onclick="agregarAlCarrito(3)" class="btn btn-dark btn-sm">
                                     Agregar
                                 </button>
                             </div>
                         </div>
-
                     </div>
                 </div>
+
             </div>
         </div>
+    </section>
 
 
 
-        <footer>
-            <div class="text-right p-3" style=" color: white; background-color: rgba(0, 0, 0, 0.863);">
-                © 2025 DM Distribuciones - Esteban Jiménez Moreno
-            </div>
-        </footer>
-        <!-- 1. FontAwesome (opcional) -->
-        <script src="https://kit.fontawesome.com/70d25248c9.js" crossorigin="anonymous"></script>
+    <footer>
+        <div class="text-right p-3" style=" color: white; background-color: rgba(0, 0, 0, 0.863);">
+            © 2025 DM Distribuciones - Esteban Jiménez Moreno
+        </div>
+    </footer>
+    <!-- 1. FontAwesome (opcional) -->
+    <script src="https://kit.fontawesome.com/70d25248c9.js" crossorigin="anonymous"></script>
 
-        <!-- 2. jQuery -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
+    <!-- 2. jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
 
-        <!-- 3. Popper.js -->
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-            crossorigin="anonymous"></script>
+    <!-- 3. Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
 
-        <!-- 4. Bootstrap.js -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
-            integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
-            crossorigin="anonymous"></script>
+    <!-- 4. Bootstrap.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
 
-        <!-- 5.JS personalizado (después de Bootstrap y jQuery) -->
-        <script src="assets/js/app.js"></script>
+    <!-- 5.JS personalizado (después de Bootstrap y jQuery) -->
+    <script src="assets/js/app.js"></script>
 
 </body>
 

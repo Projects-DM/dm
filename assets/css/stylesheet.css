@@ -88,32 +88,42 @@ nav.navbar {
 }
 
 #banner1 {
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin: 5px 15px 0 15px;
     background-image: url(../img/carniceria1.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
+    /* ✅ adapta sin deformar */
+    background-position: center;
+    /* ✅ centrado inteligente */
+    background-attachment: fixed;
+    /* opcional si quieres efecto parallax */
     color: white;
-    height: 645px;
+    height: 455px;
+    /* puedes ajustar este valor */
     box-shadow: 0px 15px 40px black;
-    margin-bottom: 0px;
 }
 
 #banner2 {
-    margin-top: 15px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin: 15px 25px 50px 25px;
     background-image: url(../img/carniceria.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100%;
-    background-position: 0px -120px;
+    background-size: cover;
+    /* <- importante: ocupa todo */
+    background-position: center;
+    background-color: black;
+    /* <- seguridad visual si no carga imagen */
     color: white;
-    height: 345px;
+    height: 245px;
     box-shadow: 0px 15px 40px black;
-    margin-bottom: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
+
+
+
 
 /* Barra superior animada */
 .top-banner {
@@ -216,7 +226,7 @@ nav.navbar {
 
 #carne {
     position: relative;
-    top: 100px;
+
     color: red;
     font-family: 'Alfa Slab One', cursive;
     -webkit-text-stroke: 5px rgb(255, 255, 255);
@@ -229,9 +239,6 @@ nav.navbar {
     font-family: 'Alfa Slab One', cursive;
 }
 
-#cardsShop {
-    margin: 100px;
-}
 
 h5 {
     font-size: 35px;
@@ -240,7 +247,7 @@ h5 {
 
 .separado-h1 {
     position: relative;
-    top: 160px;
+    top: 100px;
     margin: 0;
 }
 
@@ -341,9 +348,21 @@ hr {
 }
 
 
+#btnUbicacion {
+    position: relative;
+    top: 80px;
+    margin-left: 15px;
+    border: 5px solid rgb(236, 236, 236);
+    font-weight: bold;
+    font-family: 'Acme', sans-serif;
+    background-color: red;
+    font-size: 24px;
+
+}
+
+
 
 #btnRecoger,
-#btnUbicacion,
 #btnEnviar {
     position: relative;
     top: 280px;
