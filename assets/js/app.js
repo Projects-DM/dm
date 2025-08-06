@@ -50,6 +50,8 @@ function agregarAlCarrito(idProducto) {
         cantidad = 1;
     }
 
+
+
     const productoExistente = carrito.find(p => p.id === idProducto);
     if (productoExistente) {
         productoExistente.cantidad += cantidad;
@@ -86,14 +88,28 @@ function agregarAlCarrito(idProducto) {
 // 🧹 Vaciar carrito
 function vaciar() {
     const select = document.getElementById("mySelect");
+    const totalElemento = document.getElementById("totalNum");
+    const contadorElemento = document.getElementById("clicks");
+
+    // Limpiar el select
     select.innerHTML = "";
 
+    // Reiniciar variables
     total = 0;
     clicks = 0;
     carrito = [];
 
+    // Actualizar total visualmente
+    if (totalElemento) {
+        totalElemento.innerHTML = "$ 0";
+    }
 
+    // Actualizar contador visualmente
+    if (contadorElemento) {
+        contadorElemento.innerHTML = "0";
+    }
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const navItem = document.getElementById("navContacto");
@@ -120,3 +136,34 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+
+document.getElementById("pagarBoton").addEventListener("click", gestionarEnvio);
+
+function gestionarEnvio() {
+    const nombre = document.getElementById("nombreCliente").value.trim();
+    const direccion = document.getElementById("direccionCliente").value.trim();
+
+    if (!nombre || !direccion) {
+        alert("Por favor completa todos los datos del comprador.");
+        return;
+    }
+
+    if (carrito.length === 0) {
+        alert("El carrito está vacío.");
+        return;
+    }
+
+    let mensaje = `📦 *Nueva compra desde la web*\n\n👤 *Cliente:* ${nombre}\n📍 *Dirección:* ${direccion}\n\n🛒 *Productos:* \n`;
+
+    carrito.forEach(p => {
+        mensaje += `- ${p.cantidad} x ${p.nombre} ($${p.precio.toLocaleString("es-CO")})\n`;
+    });
+
+    const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
+    mensaje += `\n💰 *Total:* $${total.toLocaleString("es-CO")}`;
+
+    const numeroWhatsApp = "573135657116"; // ← Cambia este número por el de tu WhatsApp Business
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, "_blank");
+}

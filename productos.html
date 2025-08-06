@@ -22,8 +22,8 @@
                 <img src="assets/img/kids-chicken.gif" alt="Pollito" class="pollito">
                 <span class="texto-scroll">
                     Pedidos al WhatsApp <i class="fa-brands fa-whatsapp fa-lg"></i>
-                    </i> +57 300 000 0000
-                    <i class="fa-solid fa-envelope"></i></i> pedidos@dmdistribuciones.com <i
+                    </i> +57 310 605 3919
+                    <i class="fa-solid fa-envelope"></i></i> porcionadoscolombia@gmail.com <i
                         class="fa-solid fa-cart-shopping"></i> Mínimo de compra:
                     $200.000
                 </span>
@@ -89,7 +89,7 @@
         <h5 id="carritoTitulo">Productos Agregados</h5>
 
         <label for="mySelect">Productos en el carrito:</label>
-        <select id="mySelect" size="8">
+        <select id="mySelect" size="5">
         </select>
 
 
@@ -98,8 +98,17 @@
         <h4 id="total">Total:</h4>
         <h4 id="totalNum"></h4>
 
-        <div id="pagar">
-            <button id="pagarBoton" type="button" class="btn btn-danger">Pagar</button>
+        <div class="card p-3 mt-3 bg-dark text-white" id="formularioEnvio">
+            <h5>Cliente</h5>
+            <input type="text" id="nombreCliente" class="form-control mb-2" placeholder="Nombre completo" required>
+            <input type="text" id="direccionCliente" class="form-control mb-2" placeholder="Dirección de envío"
+                required>
+        </div>
+
+
+        <div id="pagar" class="mt-3 d-flex flex-column ">
+
+            <button id="pagarBoton" type="button" class="btn btn-danger">Gestionar Envio</button>
 
             <button id="vaciarBoton" onclick="vaciar()" type="button" class="btn btn-dark">Vaciar</button>
 

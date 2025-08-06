@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Alfa+Slab+One&display=swap');
 
+
+
 body {
     overflow-x: hidden;
 }
@@ -368,7 +370,7 @@ hr {
 #cartBoton {
     border: 3px solid #000000;
     background-color: #ffffff;
-    margin-right: 150px;
+
 }
 
 #cartBoton:hover {
@@ -530,7 +532,7 @@ footer {
     font-size: 22px;
     color: #ece5e5;
     display: block;
-    margin: 10px auto;
+    margin: -10px auto;
     text-align: center;
 }
 
@@ -587,6 +589,7 @@ footer {
     margin-top: 25px;
     font-family: 'Alfa Slab One', cursive;
     width: 275px;
+    overflow-X: auto;
     text-align: start;
     margin-left: 36px;
     font-size: 29px;
@@ -628,6 +631,13 @@ footer {
 
         width: 100%;
     }
+
+    @media (max-width: 575.98px) {
+        .producto-controles>* {
+            margin-bottom: 8px;
+        }
+    }
+
 
     .cantidad-box {
         justify-content: center;
