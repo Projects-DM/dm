@@ -30,7 +30,7 @@ body {
 .navbar {
     margin-top: 20px;
     margin-bottom: 5px;
-    box-shadow: 0px 0px 15px rgb(49, 49, 49);
+    box-shadow: 0px 0px 15px rgb(238, 9, 9);
 }
 
 
@@ -50,8 +50,7 @@ nav.navbar {
 
 .linkMenu {
     color: #df1919 !important;
-    padding: 10px 40px;
-    border: 6px solid transparent;
+    padding: 10px 20px;
     transition: all 0.3s ease;
     font-weight: 500;
     font-size: 22px;
@@ -64,6 +63,8 @@ nav.navbar {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 
 }
+
+
 
 #imgReseña {
     width: 120px;
@@ -383,46 +384,42 @@ hr {
 
 #btnUbicacion {
     position: relative;
-    top: 80px;
-    margin-left: 15px;
+    top: 120px;
+
+}
+
+
+
+.btnAccion {
+    display: inline-block;
+    margin: 3px 5px;
+    color: #f0ecec;
     border: 5px solid rgb(236, 236, 236);
     font-weight: bold;
     font-family: 'Acme', sans-serif;
     background-color: red;
     font-size: 24px;
+    padding: 8px 16px;
+    white-space: nowrap;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+}
 
+@media screen and (max-width: 576px) {
+    .btnAccion {
+        padding: 4px 8px;
+        border-width: 3px;
+    }
 }
 
 
 
-#btnRecoger,
-#btnEnviar,
-#btnProductos {
-    position: relative;
-    margin-top: 0px;
-    border: 5px solid rgb(236, 236, 236);
-    font-weight: bold;
-    font-family: 'Acme', sans-serif;
-    background-color: red;
-    font-size: 24px;
-
-}
-
-#btnRecoger:hover {
+.btnAccion:hover {
     border: 5px solid #000000;
     color: black;
-
-
 }
 
-
-
-
-#btnEnviar:hover {
-    color: black;
-    border: 5px solid #000000;
-
-}
 
 #sobreNosotros {
     height: 500px;
@@ -431,6 +428,7 @@ hr {
 
 h3 {
     color: #cc0000;
+    margin: 50px;
     text-align: center;
     margin-top: 100px;
     font-family: 'Alfa Slab One', cursive;
@@ -644,7 +642,7 @@ footer {
     text-align: center;
     margin-top: -180px;
     font-family: 'Alfa Slab One', cursive;
-    font-size: 50px;
+    font-size: 40px;
 
 
 }

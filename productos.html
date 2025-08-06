@@ -32,9 +32,10 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand">
-            <img id="logoEmpresa" src="assets/img/logo_dm.png" width="150" height="35" alt="">
+    <!-- Barra de navegación -->
+    <nav id="barraNavegacion" class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img id="logoEmpresa" src="assets/img/logo_dm.png" alt="DM Distribuciones" style="height: 60px;">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -56,12 +57,19 @@
                 <li class="nav-item">
                     <a class="nav-link linkMenu" href="ubicacion.html">Ubicación</a>
                 </li>
-                <li class="nav-item dropdown" id="navContacto">
-                    <a class="nav-link dropdown-toggle linkMenu" href="contacto.html" id="menuContacto" role="button"
-                        aria-haspopup="true" aria-expanded="false">
+                <li class="nav-item">
+                    <a class="nav-link linkMenu" href="assets/pdf/catalogo.pdf" target="_blank" rel="noopener">
+                        Catálogo
+                    </a>
+                </li>
+                <li class="nav-item dropdown d-flex align-items-center" id="navContacto">
+                    <a class="nav-link linkMenu" href="contacto.html">
                         Contacto
                     </a>
-                    <div class="dropdown-menu" id="submenuContacto">
+                    <a class="nav-link dropdown-toggle px-2" href="#" id="menuContacto" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </a>
+                    <div class="dropdown-menu" id="submenuContacto" aria-labelledby="menuContacto">
                         <a class="dropdown-item linkMenu" href="tel:+573001234567">Teléfono</a>
                         <a class="dropdown-item linkMenu" href="https://facebook.com/tuempresa"
                             target="_blank">Facebook</a>
@@ -73,33 +81,34 @@
 
             </ul>
         </div>
+    </nav>
 
 
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <h5 id="carritoTitulo">Productos Agregados</h5>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h5 id="carritoTitulo">Productos Agregados</h5>
 
-            <label for="mySelect">Productos en el carrito:</label>
-            <select id="mySelect" size="8">
-            </select>
+        <label for="mySelect">Productos en el carrito:</label>
+        <select id="mySelect" size="8">
+        </select>
 
 
 
-            <hr id="lineaCarrito">
-            <h4 id="total">Total:</h4>
-            <h4 id="totalNum"></h4>
+        <hr id="lineaCarrito">
+        <h4 id="total">Total:</h4>
+        <h4 id="totalNum"></h4>
 
-            <div id="pagar">
-                <button id="pagarBoton" type="button" class="btn btn-danger">Pagar</button>
+        <div id="pagar">
+            <button id="pagarBoton" type="button" class="btn btn-danger">Pagar</button>
 
-                <button id="vaciarBoton" onclick="vaciar()" type="button" class="btn btn-dark">Vaciar</button>
-
-            </div>
-        </div>
-        <button onclick="openNav()" id="cartBoton" class="btn btn-outline-dark my-2 my-sm-0" type="submit"><i id="cart"
-                class="fas fa-shopping-cart"></i><a id="clicks">0</a></button>
+            <button id="vaciarBoton" onclick="vaciar()" type="button" class="btn btn-dark">Vaciar</button>
 
         </div>
+    </div>
+    <button onclick="openNav()" id="cartBoton" class="btn btn-outline-dark my-2 my-sm-0" type="submit"><i id="cart"
+            class="fas fa-shopping-cart"></i><a id="clicks">0</a></button>
+
+    </div>
     </nav>
 
     <section id="banner2" class="parallax-section">

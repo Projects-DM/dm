@@ -33,18 +33,16 @@
     </div>
 
 
+    <!-- Barra de navegación -->
     <nav id="barraNavegacion" class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img id="logoEmpresa" src="assets/img/logo_dm.png" alt="DM Distribuciones">
-
+            <img id="logoEmpresa" src="assets/img/logo_dm.png" alt="DM Distribuciones" style="height: 60px;">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -60,12 +58,19 @@
                 <li class="nav-item">
                     <a class="nav-link linkMenu" href="ubicacion.html">Ubicación</a>
                 </li>
-                <li class="nav-item dropdown" id="navContacto">
-                    <a class="nav-link dropdown-toggle linkMenu" href="contacto.html" id="menuContacto" role="button"
-                        aria-haspopup="true" aria-expanded="false">
+                <li class="nav-item">
+                    <a class="nav-link linkMenu" href="assets/pdf/catalogo.pdf" target="_blank" rel="noopener">
+                        Catálogo
+                    </a>
+                </li>
+                <li class="nav-item dropdown d-flex align-items-center" id="navContacto">
+                    <a class="nav-link linkMenu" href="contacto.html">
                         Contacto
                     </a>
-                    <div class="dropdown-menu" id="submenuContacto">
+                    <a class="nav-link dropdown-toggle px-2" href="#" id="menuContacto" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </a>
+                    <div class="dropdown-menu" id="submenuContacto" aria-labelledby="menuContacto">
                         <a class="dropdown-item linkMenu" href="tel:+573001234567">Teléfono</a>
                         <a class="dropdown-item linkMenu" href="https://facebook.com/tuempresa"
                             target="_blank">Facebook</a>
@@ -76,8 +81,6 @@
                 </li>
 
             </ul>
-        </div>
-
         </div>
     </nav>
 
