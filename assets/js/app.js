@@ -31,6 +31,7 @@ let carrito = [];
 // 🔓 Abrir carrito
 function openNav() {
     document.getElementById("mySidenav").style.width = "350px";
+
 }
 
 // 🔒 Cerrar carrito
@@ -74,8 +75,8 @@ function agregarAlCarrito(idProducto) {
     select.add(option);
 
     // Actualizar total
-    total += producto.precio * cantidad;
-    document.getElementById("totalNum").innerHTML = "$ " + total.toLocaleString("es-CO");
+    //total += producto.precio * cantidad;
+    //document.getElementById("totalNum").innerHTML = "$ " + total.toLocaleString("es-CO");
 
     // Actualizar contador
     clicks += cantidad;
@@ -84,6 +85,7 @@ function agregarAlCarrito(idProducto) {
     // Abrir el carrito automáticamente
     openNav();
 }
+
 
 // 🧹 Vaciar carrito
 function vaciar() {
@@ -155,14 +157,23 @@ function gestionarEnvio() {
 
     let mensaje = `📦 *Nueva compra desde la web*\n\n👤 *Cliente:* ${nombre}\n📍 *Dirección:* ${direccion}\n\n🛒 *Productos:* \n`;
 
+    // Si deseas seguir mostrando los precios borar las siguientes 3 lineas y descomentar la siguiente
+    carrito.forEach(item => {
+        mensaje += `- ${item.cantidad} x ${item.nombre}\n`;
+    });
     carrito.forEach(p => {
-        mensaje += `- ${p.cantidad} x ${p.nombre} ($${p.precio.toLocaleString("es-CO")})\n`;
+        // Si más adelante deseas volver a mostrar el precio, descomenta la línea de abajo y comenta la siguiente
+        // mensaje += `- ${p.cantidad} x ${p.nombre} ($${p.precio.toLocaleString("es-CO")})\n`;
+        //mensaje += `- ${p.cantidad} x ${p.nombre}\n`;
     });
 
+    // Si más adelante deseas volver a mostrar el total, descomenta estas dos líneas
+    /*
     const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
     mensaje += `\n💰 *Total:* $${total.toLocaleString("es-CO")}`;
+    */
 
-    const numeroWhatsApp = "573135657116"; // ← Cambia este número por el de tu WhatsApp Business
+    const numeroWhatsApp = "573106053919";
     const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
 
     window.open(url, "_blank");
