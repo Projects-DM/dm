@@ -619,11 +619,19 @@ footer {
     text-align: start;
     margin-left: 36px;
     font-size: 29px;
+
+    /* 🔹 Ajuste para que no colapse en móvil */
+    min-height: 150px;
+    /* Espacio mínimo reservado */
+    pointer-events: auto;
+    /* Evita que el toque pase a elementos detrás */
 }
 
-/* Ocultar scroll en navegadores basados en WebKit (Chrome, Safari, Opera) */
-#mySelect::-webkit-scrollbar {
-    display: none;
+@media (max-width: 768px) {
+    #mySelect {
+        min-height: 180px;
+        /* Un poco más alto en pantallas táctiles */
+    }
 }
 
 
