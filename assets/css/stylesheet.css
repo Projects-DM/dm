@@ -609,31 +609,23 @@ footer {
     margin-top: 25px;
     font-family: 'Alfa Slab One', cursive;
     width: 275px;
-    /* Cambiamos a overflow-y para scroll vertical */
-    overflow-y: auto;
-    /* Ocultar la barra en navegadores modernos */
-    scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    /* IE y Edge */
     text-align: start;
-    margin-left: 36px;
-    font-size: 29px;
+    margin-left: 16px;
+    font-size: 20px;
+    min-height: 250px;
+}
 
-    /* 🔹 Ajuste para que no colapse en móvil */
-    min-height: 150px;
-    /* Espacio mínimo reservado */
-    pointer-events: auto;
-    /* Evita que el toque pase a elementos detrás */
+/* Ocultar scroll en WebKit */
+#mySelect::-webkit-scrollbar {
+    display: none;
 }
 
 @media (max-width: 768px) {
     #mySelect {
         min-height: 180px;
-        /* Un poco más alto en pantallas táctiles */
+        max-height: 180px;
     }
 }
-
 
 
 #clicks {
@@ -719,4 +711,8 @@ footer {
     margin-bottom: 0.5rem;
 }
 
-.cont
+/* no mostrar precios*/
+#total,
+#totalNum {
+    display: none;
+}
