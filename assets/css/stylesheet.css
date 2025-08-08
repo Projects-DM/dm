@@ -609,11 +609,24 @@ footer {
     margin-top: 25px;
     font-family: 'Alfa Slab One', cursive;
     width: 275px;
-    overflow-X: auto;
+    /* Cambiamos a overflow-y para scroll vertical */
+    overflow-y: auto;
+    /* Ocultar la barra en navegadores modernos */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE y Edge */
     text-align: start;
     margin-left: 36px;
     font-size: 29px;
 }
+
+/* Ocultar scroll en navegadores basados en WebKit (Chrome, Safari, Opera) */
+#mySelect::-webkit-scrollbar {
+    display: none;
+}
+
+
 
 #clicks {
     font-family: 'Alfa Slab One', cursive;
