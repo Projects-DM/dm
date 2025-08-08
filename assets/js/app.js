@@ -25,6 +25,60 @@ let total = 0;
 let clicks = 0;
 let carrito = [];
 
+// Función para actualizar el <select> (vista escritorio)
+function actualizarSelect() {
+    const select = document.getElementById("mySelect");
+    if (!select) return;
+
+    // Limpiar opciones
+    select.innerHTML = "";
+
+    // Añadir opciones del carrito
+    carrito.forEach(item => {
+        const option = document.createElement("option");
+        option.text = `${item.cantidad} x ${item.nombre}`;
+        select.add(option);
+    });
+
+    // Mostrar select solo en escritorio
+    if (!/Mobi|Android/i.test(navigator.userAgent)) {
+        select.style.display = "block";
+    } else {
+        select.style.display = "none";
+    }
+}
+
+// Función para actualizar lista <ul> móvil
+function actualizarListaMovil() {
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+        const select = document.getElementById("mySelect");
+        if (!select) return;
+
+        // Eliminar lista previa si existe
+        const listaExistente = document.getElementById("lista-carrito-movil");
+        if (listaExistente) listaExistente.remove();
+
+        const lista = document.createElement("ul");
+        lista.id = "lista-carrito-movil";
+        lista.style.maxHeight = "180px";
+        lista.style.overflowY = "auto";
+        lista.style.padding = "0";
+        lista.style.margin = "10px 0";
+        lista.style.listStyle = "none";
+        lista.style.color = "white";
+
+        carrito.forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = `${item.cantidad} x ${item.nombre}`;
+            li.style.padding = "6px 10px";
+            li.style.borderBottom = "1px solid rgba(255,255,255,0.2)";
+            lista.appendChild(li);
+        });
+
+        select.parentNode.appendChild(lista);
+    }
+}
+
 // 🔓 Abrir carrito
 function openNav() {
     document.getElementById("mySidenav").style.width = "350px";
@@ -62,10 +116,8 @@ function agregarAlCarrito(idProducto) {
     // Limpiar input
     inputCantidad.value = "";
 
-    // Actualizar el select con la lista actualizada
+    // Actualizar vistas
     actualizarSelect();
-
-    // Actualizar lista móvil si aplica
     actualizarListaMovil();
 
     // Actualizar contador
@@ -76,95 +128,59 @@ function agregarAlCarrito(idProducto) {
     openNav();
 }
 
-// Actualiza el contenido del select desde el array carrito
-function actualizarSelect() {
-    const select = document.getElementById("mySelect");
-    if (!select) return;
-
-    select.innerHTML = ""; // limpiar
-
-    carrito.forEach(item => {
-        const option = document.createElement("option");
-        option.text = `${item.cantidad} x ${item.nombre}`;
-        select.add(option);
-    });
-
-    // Mostrar select solo en escritorio
-    if (!/Mobi|Android/i.test(navigator.userAgent)) {
-        select.style.display = "block";
-    }
-}
-
-// Función que crea la lista visible para móvil y oculta el select
-function actualizarListaMovil() {
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
-        const select = document.getElementById("mySelect");
-        if (!select) return;
-
-        // Eliminar lista móvil previa si existe
-        const listaExistente = document.getElementById("lista-carrito-movil");
-        if (listaExistente) listaExistente.remove();
-
-        // Crear nueva lista
-        const lista = document.createElement("ul");
-        lista.id = "lista-carrito-movil";
-        lista.style.maxHeight = "180px";
-        lista.style.overflowY = "auto";
-        lista.style.padding = "0";
-        lista.style.margin = "10px 0";
-        lista.style.listStyle = "none";
-        lista.style.color = "white";
-
-        carrito.forEach(item => {
-            const li = document.createElement("li");
-            li.textContent = `${item.cantidad} x ${item.nombre}`;
-            li.style.padding = "6px 10px";
-            li.style.borderBottom = "1px solid rgba(255,255,255,0.2)";
-            lista.appendChild(li);
-        });
-
-        select.style.display = "none"; // ocultar select en móvil
-        select.parentNode.appendChild(lista);
-    }
-}
-
 // 🧹 Vaciar carrito
 function vaciar() {
     carrito = [];
     clicks = 0;
     total = 0;
 
-    // Limpiar select y mostrarlo (para escritorio)
     const select = document.getElementById("mySelect");
     if (select) {
         select.innerHTML = "";
-        select.style.display = "block";
+        select.style.display = "block"; // Para escritorio
     }
 
-    // Eliminar lista móvil si existe
     const listaExistente = document.getElementById("lista-carrito-movil");
     if (listaExistente) listaExistente.remove();
 
-    // Actualizar contador y total
     const totalElemento = document.getElementById("totalNum");
     const contadorElemento = document.getElementById("clicks");
 
-    if (totalElemento) {
-        totalElemento.innerHTML = "$ 0";
-    }
-    if (contadorElemento) {
-        contadorElemento.innerHTML = "0";
-    }
+    if (totalElemento) totalElemento.innerHTML = "";
+    if (contadorElemento) contadorElemento.innerHTML = "0";
 }
 
-// Resto de tu código (eventos, gestionarEnvio, etc.) sin cambios
+// Gestión del envío (igual que antes)
+document.getElementById("pagarBoton").addEventListener("click", gestionarEnvio);
 
-// Por si quieres, puedes llamar a actualizarSelect() y actualizarListaMovil() al cargar la página, 
-// para sincronizar la vista si hay datos en carrito almacenados (no está en tu código actual pero lo puedes agregar):
+function gestionarEnvio() {
+    const nombre = document.getElementById("nombreCliente").value.trim();
+    const direccion = document.getElementById("direccionCliente").value.trim();
 
+    if (!nombre || !direccion) {
+        alert("Por favor completa todos los datos del comprador.");
+        return;
+    }
+
+    if (carrito.length === 0) {
+        alert("El carrito está vacío.");
+        return;
+    }
+
+    let mensaje = `📦 *Nueva compra desde la web*\n\n👤 *Cliente:* ${nombre}\n📍 *Dirección:* ${direccion}\n\n🛒 *Productos:* \n`;
+
+    carrito.forEach(item => {
+        mensaje += `- ${item.cantidad} x ${item.nombre}\n`;
+    });
+
+    const numeroWhatsApp = "573106053919";
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, "_blank");
+}
+
+// Inicializar vistas al cargar página
 document.addEventListener("DOMContentLoaded", () => {
     actualizarSelect();
     actualizarListaMovil();
-
-    // Resto de listeners y lógica que ya tienes...
 });
