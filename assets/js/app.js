@@ -25,38 +25,20 @@ let total = 0;
 let clicks = 0;
 let carrito = [];
 
-// Función para actualizar el <select> (vista escritorio)
-function actualizarSelect() {
+// Función que actualiza la vista del carrito en escritorio y móvil
+function actualizarVistaCarrito() {
     const select = document.getElementById("mySelect");
-    if (!select) return;
+    const contenedorLista = document.getElementById("contenedorListaCarrito");
 
-    // Limpiar opciones
+    if (!select || !contenedorLista) return;
+
+    // Limpiar select y contenedor de lista móvil
     select.innerHTML = "";
+    contenedorLista.innerHTML = "";
 
-    // Añadir opciones del carrito
-    carrito.forEach(item => {
-        const option = document.createElement("option");
-        option.text = `${item.cantidad} x ${item.nombre}`;
-        select.add(option);
-    });
-
-    // Mostrar select solo en escritorio
-    if (!/Mobi|Android/i.test(navigator.userAgent)) {
-        select.style.display = "block";
-    } else {
-        select.style.display = "none";
-    }
-}
-
-// Función para actualizar lista <ul> móvil
-function actualizarListaMovil() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
-        const select = document.getElementById("mySelect");
-        if (!select) return;
-
-        // Eliminar lista previa si existe
-        const listaExistente = document.getElementById("lista-carrito-movil");
-        if (listaExistente) listaExistente.remove();
+        // Móvil: ocultar select y mostrar lista ul
+        select.style.display = "none";
 
         const lista = document.createElement("ul");
         lista.id = "lista-carrito-movil";
@@ -75,7 +57,17 @@ function actualizarListaMovil() {
             lista.appendChild(li);
         });
 
-        select.parentNode.appendChild(lista);
+        contenedorLista.appendChild(lista);
+
+    } else {
+        // Escritorio: mostrar select y llenarlo
+        select.style.display = "block";
+
+        carrito.forEach(item => {
+            const option = document.createElement("option");
+            option.text = `${item.cantidad} x ${item.nombre}`;
+            select.add(option);
+        });
     }
 }
 
@@ -116,9 +108,8 @@ function agregarAlCarrito(idProducto) {
     // Limpiar input
     inputCantidad.value = "";
 
-    // Actualizar vistas
-    actualizarSelect();
-    actualizarListaMovil();
+    // Actualizar vista (select o lista móvil)
+    actualizarVistaCarrito();
 
     // Actualizar contador
     clicks += cantidad;
@@ -134,23 +125,42 @@ function vaciar() {
     clicks = 0;
     total = 0;
 
-    const select = document.getElementById("mySelect");
-    if (select) {
-        select.innerHTML = "";
-        select.style.display = "block"; // Para escritorio
-    }
+    // Limpiar contador y total visualmente
+    document.getElementById("clicks").innerHTML = "0";
+    document.getElementById("totalNum").innerHTML = "$ 0";
 
-    const listaExistente = document.getElementById("lista-carrito-movil");
-    if (listaExistente) listaExistente.remove();
-
-    const totalElemento = document.getElementById("totalNum");
-    const contadorElemento = document.getElementById("clicks");
-
-    if (totalElemento) totalElemento.innerHTML = "";
-    if (contadorElemento) contadorElemento.innerHTML = "0";
+    // Actualizar vista (limpia select y lista móvil)
+    actualizarVistaCarrito();
 }
 
-// Gestión del envío (igual que antes)
+// Resto de código que tienes (eventos, gestionar envío, etc.)
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navItem = document.getElementById("navContacto");
+    const submenu = document.getElementById("submenuContacto");
+
+    if (navItem && submenu) {
+        navItem.addEventListener("mouseenter", () => {
+            navItem.classList.add("show");
+            submenu.classList.add("show");
+        });
+
+        navItem.addEventListener("mouseleave", () => {
+            navItem.classList.remove("show");
+            submenu.classList.remove("show");
+        });
+
+        // Previene que el clic en el enlace principal recargue
+        const isContacto = window.location.pathname.includes("contacto.html");
+        if (isContacto) {
+            const linkContacto = document.getElementById("menuContacto");
+            if (linkContacto) {
+                linkContacto.addEventListener("click", (e) => e.preventDefault());
+            }
+        }
+    }
+});
+
 document.getElementById("pagarBoton").addEventListener("click", gestionarEnvio);
 
 function gestionarEnvio() {
@@ -178,9 +188,3 @@ function gestionarEnvio() {
 
     window.open(url, "_blank");
 }
-
-// Inicializar vistas al cargar página
-document.addEventListener("DOMContentLoaded", () => {
-    actualizarSelect();
-    actualizarListaMovil();
-});
