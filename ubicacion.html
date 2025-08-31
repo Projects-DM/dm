@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+    <title>Ecommerce</title>
+</head>
+
+
+<!-- Barra superior animada -->
+
+<body>
+    <div class="top-banner">
+        <div class="scroll-text-wrapper">
+            <div class="scroll-content">
+                <img src="assets/img/kids-chicken.gif" alt="Pollito" class="pollito">
+                <span class="texto-scroll">
+                    Pedidos al WhatsApp <i class="fa-brands fa-whatsapp fa-lg"></i>
+                    </i> +57 +57 310 605 3919
+                    <i class="fa-solid fa-envelope"></i></i> porcionadoscolombia@gmail.com <i
+                        class="fa-solid fa-cart-shopping"></i> Mínimo de compra:
+                    $200.000
+                </span>
+                <img src="assets/img/kids-chicken.gif" alt="Pollito" class="pollito">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Barra de navegación -->
+    <nav id="barraNavegacion" class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+            <img id="logoEmpresa" src="assets/img/logo_dm.png" alt="DM Distribuciones" style="height: 60px;">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link linkMenu" href="index.html">Principal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link linkMenu" href="index.html#SobreNosotros">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link linkMenu" href="productos.html">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link linkMenu" href="ubicacion.html">Ubicación</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link linkMenu" href="assets/pdf/catalogo.pdf" target="_blank" rel="noopener">
+                        Catálogo
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link linkMenu" href="contacto.html">
+                        Contacto
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <section id="banner1">
+        <h1 class="separado-h2">
+
+            ¿Dónde estamos <br> ubicados?
+        </h1>
+        <div class="container">
+            <div class="row">
+                <div id="brands" class="col">
+                    <div id="botonIndex">
+                        <div class="pt-5"></div>
+                        <button id="btnUbicacion" onclick="location.href='#ubicacionMapa'" class="btnAccion">Ver
+                            ubicación</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="ubicacionMapa">
+
+        <h3>Ubicación </h3>
+
+        <!-- ✅ MAPA DE GOOGLE MAPS -->
+        <div class="d-flex justify-content-center">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1754003291433!6m8!1m7!1sON6RavHPBCiuq8gyC9DktA!2m2!1d6.079091801063762!2d-75.33369179982591!3f320.25565473786395!4f-7.177921909215755!5f0.4000000000000002"
+                width="100%" height="500" frameborder="0" style="border:0; max-width: 1000px; margin-bottom: 200px;"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <div class="info-ubicacion">
+            <h3>📍 Nuestra Sucursal Principal</h3>
+            <p>
+                <strong>Visítanos en la <strong>Calle 25 #30-100</strong>, El Carmen de Viboral, Antioquia – Colombia.
+                    Estamos ubicados en una zona central, de fácil acceso, rodeados de comercios y con excelente
+                    atención.
+                    ¡Te esperamos con calidad y frescura al mejor precio!</strong>
+            </p>
+        </div>
+
+
+
+        <footer>
+            <div class="text-right p-3" style=" color: white; background-color: rgba(0, 0, 0, 0.863);">
+                © 2025 DM Distribuciones - Esteban Jiménez Moreno
+            </div>
+        </footer>
+        <!-- 1. FontAwesome (opcional) -->
+        <script src="https://kit.fontawesome.com/70d25248c9.js" crossorigin="anonymous"></script>
+
+        <!-- 2. jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+
+        <!-- 3. Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+
+        <!-- 4. Bootstrap.js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+            integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+            crossorigin="anonymous"></script>
+
+        <!-- 5.JS personalizado (después de Bootstrap y jQuery) -->
+        <script src="assets/js/app.js"></script>
+
+</body>
+
+
+</html>

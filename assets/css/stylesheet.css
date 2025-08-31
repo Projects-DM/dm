@@ -1,0 +1,746 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Alfa+Slab+One&display=swap');
+
+
+
+.precio {
+    display: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+/* Textos que sean muy largos o muy grandes en pantallas pequeñas */
+@media (max-width: 768px) {
+
+    h1,
+    h2,
+    h3,
+    p,
+    a,
+    button {
+        font-size: 90%;
+        /* ajusta según el resultado visual */
+    }
+
+    .container,
+    .row,
+    .col,
+    .section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    min-height: 80px;
+    box-shadow: 0px 0px 15px rgb(238, 9, 9);
+    justify-content: center;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-item {
+    margin-left: -0px;
+    flex-grow: 1;
+    text-align: center;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+
+.linkMenu {
+    color: #df1919 !important;
+    padding: 20px 20px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+
+.linkMenu:hover {
+    color: #0a0404 !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+#imgReseña {
+    width: 120px;
+    /* Puedes ajustar según se vea mejor */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+    /* centrado horizontal y pequeño margen inferior */
+    object-fit: contain;
+}
+
+
+#banner {
+    margin: 15px;
+    background-image: url(../img/carniceria2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 645px;
+    box-shadow: 0px 15px 40px black;
+    display: flex;
+    background-position: 9% 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* TABLETS */
+@media screen and (max-width: 768px) {
+    #banner {
+        height: 500px;
+        background-position: 95% 20%;
+        /* aumentamos un poco más que antes */
+    }
+}
+
+/* CELULARES */
+@media screen and (max-width: 480px) {
+    #banner {
+        height: 600px;
+        background-position: 95% 20%;
+        /* más alto para mostrar texto + botones */
+    }
+}
+
+
+
+#banner1 {
+    margin: 5px 15px 0 15px;
+    background-image: url(../img/carniceria1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* ✅ adapta sin deformar */
+    background-position: center;
+    /* ✅ centrado inteligente */
+    background-attachment: fixed;
+    /* opcional si quieres efecto parallax */
+    color: white;
+    height: 455px;
+    /* puedes ajustar este valor */
+    box-shadow: 0px 15px 40px black;
+}
+
+#banner2 {
+    margin: 15px 25px 50px 25px;
+    background-image: url(../img/carniceria.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* <- importante: ocupa todo */
+    background-position: center;
+    background-color: black;
+    /* <- seguridad visual si no carga imagen */
+    color: white;
+    height: 245px;
+    box-shadow: 0px 15px 40px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+
+/* Barra superior animada */
+.top-banner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #d61010;
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: 9999;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* Contenedor que oculta el desbordamiento */
+.scroll-text-wrapper {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* El bloque completo que se mueve */
+.scroll-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    animation: scroll-horizontal 20s linear infinite;
+}
+
+/* GIF del pollito */
+.pollito {
+    height: 40px;
+}
+
+.texto-scroll {
+    font-size: 20px;
+    /* Tamaño más grande */
+    font-weight: bold;
+    /* Negrita */
+    color: #e2daa9;
+    /* Cambia este color si quieres otro */
+    white-space: nowrap;
+    /* Para que no se rompa el texto */
+}
+
+
+/* Animación uniforme de derecha a izquierda */
+@keyframes scroll-horizontal {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Pausar todo si se coloca el mouse encima */
+.top-banner:hover .scroll-content {
+    animation-play-state: paused;
+}
+
+/* Responsive para móviles */
+@media screen and (max-width: 600px) {
+    .pollito {
+        height: 25px;
+    }
+
+    ogoEmpresa .texto-scroll {
+        font-size: 14px;
+    }
+}
+
+
+#logoEmpresa {
+    height: 70px;
+    width: auto;
+
+}
+
+#barraNavegacion {
+    margin-top: 50px;
+    /* Ajusta este valor según lo alto que sea tu scroll text */
+}
+
+
+
+#fotoCarne {
+    width: 100px;
+    height: 100px;
+}
+
+#precio {
+    font-size: large;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Alfa Slab One', cursive;
+}
+
+#carne {
+    position: relative;
+
+    color: red;
+    font-family: 'Alfa Slab One', cursive;
+    -webkit-text-stroke: 5px rgb(255, 255, 255);
+}
+
+#botonCarrito {
+    margin-left: 87px;
+    font-size: medium;
+    padding: 10px;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+
+h5 {
+    font-size: 35px;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.separado-h1 {
+    position: relative;
+    top: -100px;
+    margin: 0;
+}
+
+.separado-h2 {
+    position: relative;
+    top: 70px;
+    margin: 0;
+}
+
+
+
+h1 {
+    text-align: center;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 60px;
+    color: red;
+    -webkit-text-stroke: 5px rgb(236, 236, 236);
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke: 2px rgb(241, 240, 240);
+}
+
+h2:hover {
+    color: rgb(255, 4, 4);
+    -webkit-text-stroke: 2px rgb(7, 7, 7);
+}
+
+h3:hover {
+    color: rgb(255, 4, 4);
+    -webkit-text-stroke: 2px rgb(7, 7, 7);
+}
+
+.form-control {
+    border: 1px solid #02020298;
+    position: relative;
+}
+
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: lefts;
+    /* opcional, para justificar el texto */
+    font-size: 18px;
+    color: #333;
+}
+
+@media (max-width: 576px) {
+    .p {
+        font-size: 16px;
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 100%;
+    }
+}
+
+
+#uten {
+    color: #000000;
+    -webkit-text-stroke: 1px rgb(241, 240, 240);
+}
+
+hr {
+    border: 2px solid red;
+}
+
+#cart {
+    color: #000000;
+    font-size: 18px;
+    -webkit-text-stroke: 1px rgb(250, 250, 250);
+    margin: 5px;
+
+
+}
+
+#cart:hover {
+    font-size: x-large;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    margin: 5px;
+}
+
+#cartBoton {
+    margin-top: 20px;
+    padding: 4px 8px !important;
+    max-width: 80px;
+    width: auto;
+    min-width: 60px;
+    justify-content: center;
+}
+
+#clicks {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#cartBoton:hover {
+    background-color: #ff0000da;
+}
+
+
+#botonIndex {
+    text-align: center;
+    align-items: center;
+    margin-top: -40px;
+}
+
+
+#btnUbicacion {
+    position: relative;
+    top: 120px;
+
+}
+
+
+
+.btnAccion {
+    display: inline-block;
+    margin: 3px 5px;
+    color: #f0ecec;
+    border: 5px solid rgb(236, 236, 236);
+    font-weight: bold;
+    font-family: 'Acme', sans-serif;
+    background-color: red;
+    font-size: 24px;
+    padding: 8px 16px;
+    white-space: nowrap;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 576px) {
+    .btnAccion {
+        padding: 4px 8px;
+        border-width: 3px;
+    }
+}
+
+
+
+.btnAccion:hover {
+    border: 5px solid #000000;
+    color: black;
+}
+
+
+#sobreNosotros {
+    height: 500px;
+    margin-top: 50px;
+}
+
+h3 {
+    color: #cc0000;
+    margin: 50px;
+    text-align: center;
+    margin-top: 100px;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 40px;
+    -webkit-text-stroke: 2px rgb(241, 240, 240);
+}
+
+h4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+#total {
+    color: white;
+    text-align: start;
+    margin-left: 36px;
+}
+
+#totalNum {
+    color: white;
+    text-align: start;
+    margin-left: 130px;
+    margin-top: -48px;
+}
+
+#textReseña {
+    text-align: center;
+    font-style: italic;
+}
+
+#carnicero {
+    height: 650px;
+    margin-top: 200px;
+    margin-bottom: 30px;
+    margin-left: 15px;
+    background-image: url(../img/carnicero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0px 25px 40px 5px black;
+}
+
+#hrCertificaciones {
+    width: 700px;
+}
+
+#aboutUs {
+    text-align: center;
+    margin-left: 15px;
+    margin-top: 160px;
+}
+
+#imgReseña {
+    display: block;
+    margin: 25px auto;
+    /* Margen superior e inferior 25px, centrado horizontal automático */
+    height: 250px;
+    width: 250px;
+}
+
+
+.fas {
+    color: yellow;
+    margin-left: 10px;
+    font-size: xx-large;
+    -webkit-text-stroke: 2px rgb(0, 0, 0);
+}
+
+#centerStars {
+    text-align: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+footer {
+    font-weight: bolder;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgba(17, 17, 17, 0.63);
+    overflow-x: hidden;
+    transition: 0.5s;
+    top: 40px;
+}
+
+#carritoTitulo {
+    text-align: center;
+    color: #ffffff;
+}
+
+#mySidenav label {
+    font-size: 22px;
+    color: #ece5e5;
+    display: block;
+    margin: -10px auto;
+    text-align: center;
+}
+
+
+
+#pagar {
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+#pagarBoton {
+    margin-top: 5px;
+    padding: 10px;
+    width: 80%;
+}
+
+#vaciarBoton {
+    margin-top: 5px;
+    padding: 10px;
+    width: 80%;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #ff0000;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#lineaCarrito {
+    width: 275px;
+    border: 2px solid white;
+}
+
+#mySelect {
+    background: none;
+    color: white;
+    border: none;
+    margin-top: 25px;
+    font-family: 'Alfa Slab One', cursive;
+    width: 275px;
+    text-align: start;
+    margin-left: 16px;
+    font-size: 24px;
+    min-height: 250px;
+}
+
+/* Ocultar scroll en WebKit */
+#mySelect::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #mySelect {
+        min-height: 180px;
+        max-height: 180px;
+    }
+}
+
+#lista-carrito-movil {
+    background-color: transparent;
+    /* fondo transparente */
+    border: none;
+    /* sin borde */
+    box-shadow: none;
+    /* quita sombra si tienes */
+    padding: 0;
+    margin: 10px 0;
+    list-style: none;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+#lista-carrito-movil li {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    /* si quieres separación entre items */
+    color: white;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 18px;
+}
+
+#lista-carrito-movil li:last-child {
+    border-bottom: none;
+}
+
+
+
+#clicks {
+    font-family: 'Alfa Slab One', cursive;
+    color: rgb(2, 2, 2);
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    font-size: larger;
+}
+
+
+.card-footer {
+    background-color: #fdfdfd;
+    border-top: 1px solid #ddd;
+}
+
+.precio {
+    font-size: 2rem;
+    color: #d10c0c;
+}
+
+.cantidad-input {
+    width: 70px;
+    text-align: center;
+}
+
+.cantidad-box label {
+    font-weight: 500;
+}
+
+@media (max-width: 576px) {
+    .producto-controles {
+        flex-direction: column;
+    }
+
+    .btn {
+
+        width: 100%;
+    }
+
+    @media (max-width: 575.98px) {
+        .producto-controles>* {
+            margin-bottom: 8px;
+        }
+    }
+
+
+    .cantidad-box {
+        justify-content: center;
+    }
+}
+
+
+.info-ubicacion h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #cc0000;
+    text-align: center;
+    margin-top: -180px;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 40px;
+
+
+}
+
+.contacto-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.card-contacto {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.card-contacto i {
+    font-size: 2rem;
+    color: #1c1c1c;
+    margin-bottom: 0.5rem;
+}
+
+/* no mostrar precios*/
+#total,
+#totalNum {
+    display: none;
+}
